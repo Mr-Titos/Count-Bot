@@ -1,6 +1,7 @@
+require('dotenv').config();
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const fs = require('fs');
+const token = process.env.DISCORD_TOKEN;
 
 
 bot.on('ready', function () {
@@ -95,4 +96,4 @@ bot.on('guildMemberRemove', gm => {
     }
 })
 
-bot.login('');
+bot.login(token);
