@@ -21,6 +21,7 @@ function C_Chan(serv,nom) {
 }
 
 bot.on('message', msg => {
+    try {
     if(msg.member.hasPermission("ADMINISTRATOR")) {
         if(msg.content.includes(bot.user.id) && msg.content.includes("config")) {
             var cbot = 0;
@@ -49,6 +50,7 @@ bot.on('message', msg => {
             }
         }
     }
+    } catch(err) {console.log(err);}
 })
 
 bot.on('guildMemberAdd', gm => {
